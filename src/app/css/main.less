@@ -1,0 +1,405 @@
+@import url('https://fonts.googleapis.com/css?family=Assistant:200,300,400,600,700,800');
+@import url('https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css');
+
+/* Master Styles */
+h1 {
+  color: #369;
+   font-family: 'Assistant', sans-serif;
+  font-size: 250%;
+}
+
+h2, h3 {
+  color: #444;
+   font-family: 'Assistant', sans-serif;
+  font-weight: lighter;
+}
+
+label {
+    font-weight: normal; 
+}
+
+.bold
+{
+  font-weight: bold;
+}
+// body {
+//   margin: 2em;
+// }
+
+.form-control
+{
+  text-align: right;
+}
+body, input[text], button {
+  color: #888;
+  font-family: Cambria, Georgia;
+}
+
+.panel-body
+{
+  padding-top: 0;
+}
+a {
+  cursor: pointer;
+  cursor: hand;
+}
+
+a:hover, a:focus{
+    color: white;
+    text-decoration: none;
+}
+button {
+  font-family: Arial;
+  background-color: #eee;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  cursor: hand;
+}
+button:hover {
+  background-color: #cfd8dc;
+}
+button:disabled {
+  background-color: #eee;
+  color: #aaa;
+  cursor: auto;
+}
+
+/* Navigation link styles */
+nav a {
+  padding: 5px 10px;
+  text-decoration: none;
+  margin-top: 10px;
+  display: inline-block;
+  background-color: #eee;
+  border-radius: 4px;
+}
+nav a:visited, a:link {
+  color: #607D8B;
+}
+nav a:hover {
+  color: #039be5;
+  background-color: #CFD8DC;
+}
+nav a.active {
+  color: #039be5;
+}
+.navbar-nav
+{
+  float: right;
+}
+.navbar-header
+{
+  float: right;
+}
+
+.nav > li > a:hover, .nav > li > a:focus
+{
+    background-color: white;
+    color:#77295e;
+}
+.navbar-toggle
+{
+  background-color: white;
+}
+
+.navbar-toggle .icon-bar
+{
+  background-color: #77295e;
+}
+
+/* items class */
+.items {
+  margin: 0 0 2em 0;
+  list-style-type: none;
+  padding: 0;
+  width: 24em;
+}
+.items li {
+  cursor: pointer;
+  position: relative;
+  left: 0;
+  background-color: #EEE;
+  margin: .5em;
+  padding: .3em 0;
+  height: 1.6em;
+  border-radius: 4px;
+}
+.items li:hover {
+  color: #607D8B;
+  background-color: #DDD;
+  left: .1em;
+}
+.items li.selected:hover {
+  background-color: #BBD8DC;
+  color: white;
+}
+.items .text {
+  position: relative;
+  top: -3px;
+}
+.items {
+  margin: 0 0 2em 0;
+  list-style-type: none;
+  padding: 0;
+  width: 24em;
+}
+.items li {
+  cursor: pointer;
+  position: relative;
+  left: 0;
+  background-color: #EEE;
+  margin: .5em;
+  padding: .3em 0;
+  height: 1.6em;
+  border-radius: 4px;
+}
+.items li:hover {
+  color: #607D8B;
+  background-color: #DDD;
+  left: .1em;
+}
+.items li.selected {
+  background-color: #CFD8DC;
+  color: white;
+}
+
+.items li.selected:hover {
+  background-color: #BBD8DC;
+}
+.items .text {
+  position: relative;
+  top: -3px;
+}
+.items .badge {
+  display: inline-block;
+  font-size: small;
+  color: white;
+  padding: 0.8em 0.7em 0 0.7em;
+  background-color: #607D8B;
+  line-height: 1em;
+  position: relative;
+  left: -1px;
+  top: -4px;
+  height: 1.8em;
+  margin-right: .8em;
+  border-radius: 4px 0 0 4px;
+}
+/* everywhere else */
+
+* {
+  font-family: 'Assistant', sans-serif;
+}
+
+
+
+/* event in click theme */
+
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+.navbar-custom {
+    color: transparent;
+    background-color: #77295e;
+}
+nav a:visited, a:link {
+    color: white;
+}
+.text-center {
+    text-align: center;
+}
+
+.input-text-right{
+    text-align: right;
+    height: 35px;
+    border-radius: 5px;
+    border-top-style: solid;
+    border-color: 1px red;
+    border: 1px solid #77295e;
+    margin: 0 10px 0 10px;
+    padding-right: 5px;
+    width: 230px;
+}
+.continue-btn
+{
+    width: 250px;
+    height: 41px;
+    background-color: #77295e;
+    color: white;
+    font-size: 20px;
+    border-color : #77295e;
+}
+.btn-primary:active:hover,
+.btn-primary:active,
+.continue-btn:hover {
+    background-color: #cb3c9d;
+}
+
+.continue-btn:disabled{
+  background-color: black;
+}
+
+
+
+.loading {
+    opacity: 0;
+    transition: opacity .8s ease-in-out;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background: #000;
+    z-index: -1;
+}
+my-app:empty + .loading {
+    opacity: 1;
+    z-index: 100;
+}
+my-app:empty + .loading h1 {
+    color: #EEE;
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    text-align: center;
+    transform: translate(0, -50%);
+}
+
+.gold
+{
+  color:#c7a568;
+}
+
+a.disabled {
+   pointer-events: none;
+   cursor: default;
+}
+
+.top5 { margin-top:5px; }
+.top7 { margin-top:7px; }
+.top10 { margin-top:10px; }
+.top15 { margin-top:15px; }
+.top20 { margin-top:20px; }
+
+.top40 { margin-top:40px; }
+.top50 { margin-top:50px; }
+.top100 { margin-top:100px; }
+.top40 { margin-top:40px; }
+.top50 { margin-top:50px; }
+.top100 { margin-top:100px; }
+
+
+
+.welcomePageBg
+{
+    background: url('/src/app/assets/Pictures/dreamstime_xl_20116545.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    /* For WebKit*/
+    -moz-background-size: cover;
+    /* Mozilla*/
+    -o-background-size: cover;
+    /* Opera*/
+    background-size: cover;
+}
+
+.confetyBg {
+ background: url(/src/app/assets/Pictures/BG-left.jpg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 100%;
+    background-position: -150px 40px;
+}
+
+table{
+    margin: 0 auto;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.smallCircle {
+    border-radius: 150px;
+    height: 150px;
+    font-weight: bold;
+    width: 150px;
+    background-color: #f4f5f0;
+    border: 2px solid #77295e;
+    text-align: center;
+    line-height: 135px;
+    font-size: 25px;
+    color:#77295e;
+}
+.smallCircle h1 {
+    vertical-align: middle;
+    display: table-cell;
+}
+
+.smallCircle:hover {
+    background-color: #e7e7e7;
+    cursor: pointer;
+}
+
+.selected {
+      background-color: #77295e !important;
+      color: white;
+}
+
+
+.select-type{
+    list-style-type: none;
+}
+.select-type > li
+{
+    margin: 10px;
+}
+
+.panel-heading span
+{
+    margin-top: -26px;
+    font-size: 15px;
+    margin-right: -12px;
+}
+.clickable {
+    background: rgba(0, 0, 0, 0.15);
+    display: inline-block;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.jumbotron h1{
+  color : #77295e;
+}
+
+.jumbotronV2 {
+    padding-top: 2px;
+    padding-bottom: 90px;
+    margin-bottom: 30px;
+    color: inherit;
+    background-color: #eeeeee;
+}
+.fr
+{
+    float: right;
+}
+.fc
+{
+    float: center;
+}
+
+.progressSteps
+{
+    background-color: #f4f5f0;
+    width: 200px;
+    height: 100%;
+    right: 0;
+    position: fixed;
+    right: 0;
+    right: 0;
+    z-index: 0;
+}
+.status{
+      margin-top: 50%;
+}

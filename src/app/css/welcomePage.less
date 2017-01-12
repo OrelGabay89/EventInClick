@@ -1,0 +1,162 @@
+// @import "animate.min.less";
+
+html,body
+{
+    height:100%;
+}
+
+
+
+.feature {padding:10% 0}
+.circle .btn {
+    border-radius: 40px;
+    background: #000;
+    border: #000;
+}
+.circle {
+    width: 100%;
+    padding: 10%;
+    background: white;
+    border-radius: 50px;
+}
+.circle-wrapper {
+    margin: 0 5%;
+    position: relative;
+
+}
+.circle .list-inline {
+    font-size: 0px;
+    margin: 0;
+}
+.circle .list-inline li {
+    font-size: 20px;
+    display: block;
+}
+.circle p {
+    //padding-top: 10%;
+    margin: 0 auto;
+}
+
+.table > thead > tr > th,
+.table > thead > tr > td,
+.table > tbody > tr > th,
+.table > tbody > tr > td, 
+.table > tfoot > tr > th, 
+.table > tfoot > tr > td
+{
+        border-top: 1px solid transparent;
+}
+.table > tbody > tr > th
+{
+    padding-top: 0;
+    padding-bottom: 0;
+    top: -20px;
+    position: relative
+}
+
+@media screen and (max-width: 767px)
+{
+.table-responsive {
+    width: 100%;
+    margin-bottom: 15px;
+    overflow-y: hidden;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+    border: 1px solid transparent;
+}
+}
+
+@media (min-width:460px) { 
+	.circle .list-inline li {
+	    font-size: 50px;
+	    display: inline-block;
+	}
+	.circle-wrapper {
+	    max-width: 600px;
+	    position: relative;
+        margin:0 auto;
+	}
+	.circle {
+	    height: 0px;
+	    padding: 50%;
+	    border-radius: 50%;
+        box-shadow: 0px 0px 11px 18px rgba(0, 0, 0, 0.49);
+        -webkit-box-shadow: 0px 0px 11px 18px rgba(0,0,0,0.49);
+        -moz-box-shadow: 0px 0px 11px 18px rgba(0,0,0,0.49);
+	}
+	.circle > div {
+	    position: absolute;
+	    text-align: center;
+	    left: 10%;
+	    right: 10%;
+	    top: 50%;
+	    -webkit-transform: translateY(-50%);
+	    -ms-transform: translateY(-50%);
+	    transform: translateY(-50%);
+        top:20%\9; /* ie8 hack test this out it's a guess */
+	}
+
+    
+}
+
+
+
+
+
+th.purple 
+{
+	font-size: 60px;
+    font-weight: normal;
+    text-align : center;
+    color:#77295e;
+}
+td.purple
+{
+    color:#77295e;
+    font-size: 18px;
+    font-weight: 600;
+}
+td  
+{
+    padding: 0;
+    font-size: 17px;
+    font-weight: lighter;
+}
+table hr{
+	    border-top: 1px solid #c7a568;
+	    width : 90%;
+}
+table p{
+	font-size: 20px;
+    color: #c7a568;
+    font-weight: lighter;
+}
+div.images {
+    white-space: nowrap;
+   
+}
+div.images img  {
+	 width:50px;
+	 margin: 5px;
+}
+
+
+
+.mbr-arrow__link {
+  display: inline-block;
+  font-size: 26px;
+}
+.mbr-arrow__link,
+.mbr-arrow__link:hover,
+.mbr-arrow__link:focus {
+  color: #fff;
+}
+.mbr-arrow--floating .mbr-arrow__link {
+  -webkit-animation: floating-arrow 1.6s infinite ease-in-out 0s;
+  -o-animation: floating-arrow 1.6s infinite ease-in-out 0s;
+  /* animation: floating-arrow 1.6s infinite ease-in-out 0s; */
+}
+.mbr-arrow--dark .mbr-arrow__link,
+.mbr-arrow--dark .mbr-arrow__link:hover,
+.mbr-arrow--dark .mbr-arrow__link:focus {
+  color: #252525;
+}

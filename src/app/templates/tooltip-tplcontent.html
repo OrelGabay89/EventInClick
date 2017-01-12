@@ -1,0 +1,32 @@
+<template #tipContent triggers="click:toggle">
+  <div class="panel-heading">
+  
+    <h3 class="panel-title">בחר איזורים</h3>
+  </div>
+  <template let-areaCodeItem ngFor [ngForOf]="selectedAreaCodeItems">
+    <div class="table-container">
+      <table class="table table-filter">
+        <tbody>
+          <tr>
+            <td>
+              <div class="ckbox">
+                <input type="checkbox" id={{areaCodeItem.id}} (change)="onSubAreaCheck(areaCodeItem)">
+                <label for="{{areaCodeItem.id}}"></label>
+              </div>
+            </td>
+            <td>
+              <div class="media">
+                <div class="media-body">
+                  <p class="summary">{{areaCodeItem.name}}</p>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </template>
+</template>
+<button type="button" class="btn btn-secondary" ngbTooltip="This tooltip gets its inputs from the customized configuration">
+  Customized tooltip
+</button>
