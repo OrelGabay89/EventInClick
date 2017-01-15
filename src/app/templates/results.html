@@ -10,7 +10,7 @@
                                 <template let-region ngFor [ngForOf]="regions">
                                     <button type="button" class="btn btn-default btn-filter" attr.data-target="{{region}}" (click)="filterTableResult()">{{region}}</button>
                                 </template>
-                                <button type="button" class="btn btn-default btn-filter"  data-target="all">הכל</button>
+                                <button type="button" class="btn btn-default btn-filter" data-target="all">הכל</button>
                             </div>
                         </div>
                         <div class="col-md-3">
@@ -22,11 +22,27 @@
                                     <template let-hall ngFor [ngForOf]="halls">
                                         <tr attr.data-status="{{hall.regionName}}">
                                             <td class="col-md-4">
-                                                <p class="summary">{{hall.body}}</p>
+                                                <p class="summary lbp">{{hall.body}}</p>
+                                                <p class="summary lbp" style="text-decoration: underline;">לאתר של המקום
+                                                <svg class="icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 256 256"
+                                                    style="enable-background:new 0 0 256 256;width: 15px;" xml:space="preserve">
+                                                    <path d="M128,22.5C69.8,22.5,22.5,69.8,22.5,128c0,58.2,47.3,105.5,105.5,105.5c58.2,0,105.5-47.3,105.5-105.5
+                                                        C233.5,69.8,186.2,22.5,128,22.5z M81.3,166.5h42.3v49.1c-5-0.2-9.8-0.9-14.5-2C96.7,204.9,86.8,187.9,81.3,166.5z M40.3,128
+                                                        c0-10.4,1.8-20.4,5.2-29.6h24.9c-1.7,9.4-2.6,19.3-2.6,29.6c0,10.3,0.9,20.2,2.6,29.6H45.4C42.1,148.4,40.3,138.4,40.3,128z
+                                                        M76.6,128c0-10.4,1-20.3,2.7-29.6h44.3v59.2H79.3C77.5,148.3,76.6,138.4,76.6,128z M109,42.4c4.7-1,9.6-1.7,14.5-2v49.1H81.3
+                                                        C86.8,68.1,96.7,51.1,109,42.4z M132.4,215.6v-49.1h42.3c-5.5,21.4-15.5,38.4-27.7,47.1C142.3,214.7,137.4,215.4,132.4,215.6z
+                                                        M132.4,40.4c5,0.2,9.8,0.9,14.5,2c12.3,8.8,22.2,25.7,27.7,47.1h-42.3V40.4z M165.2,48.6c18.1,8.5,32.8,23,41.6,40.9h-23.1
+                                                        C179.8,73.3,173.3,59.3,165.2,48.6z M176.7,98.4c1.8,9.3,2.7,19.3,2.7,29.6c0,10.4-1,20.3-2.7,29.6h-44.3V98.4H176.7z M183.8,166.5
+                                                        h23.1c-8.8,17.9-23.5,32.4-41.6,40.9C173.3,196.7,179.8,182.7,183.8,166.5z M185.7,157.6c1.7-9.4,2.6-19.3,2.6-29.6
+                                                        c0-10.3-0.9-20.2-2.6-29.6h24.9c3.3,9.3,5.2,19.2,5.2,29.6c0,10.4-1.8,20.4-5.2,29.6H185.7z M90.8,48.6
+                                                        c-8.1,10.7-14.5,24.7-18.5,40.9h-23C58,71.6,72.7,57.1,90.8,48.6z M49.2,166.5h23c4,16.2,10.4,30.2,18.5,40.9
+                                                        C72.7,198.9,58,184.4,49.2,166.5z"></path>
+                                                </svg>
+                                                </p>
                                             </td>
                                             <td class="col-md-6">
                                                 <a href="#" class="pull-left">
-                                                    <css-carousel [halls]='halls'></css-carousel>
+                                                    <css-carousel [h]='hall.images'></css-carousel>
                                                 </a>
                                             </td>
                                             <td class="col-md-2">
@@ -34,7 +50,7 @@
                                                     {{hall.title}}
                                                 </h4>
                                                 <div class="ckbox">
-                                                    <input type="checkbox" id={{hall.id}} checked  (change)="onHallCheck(hall.id)" >
+                                                    <input type="checkbox" id={{hall.id}} checked (change)="onHallCheck(hall.id)">
                                                     <label for="{{hall.id}}"></label>
                                                 </div>
                                             </td>
@@ -42,9 +58,8 @@
                                     </template>
                                 </tbody>
                             </table>
-
                             <div class="row top20"></div>
-                            <h3 class="text-center gold bold">שרוצים נוספים שתרצו לקבל</h3>
+                            <h3 class="text-center gold bold">שרותים נוספים שתרצו לקבל</h3>
                             <div class="row top20"></div>
                             <div class="row">
                                 <div class="col-md-2">
@@ -78,7 +93,6 @@
                                     </div>
                                 </div>
                             </div>
-         
                             <div class="contactMePriority">
                                 <div class="form-group">
                                     <h3 class="text-center gold">אנא צרו איתי קשר</h3>
@@ -95,7 +109,7 @@
                             </div>
                             <div class="form-group">
                                 <div class="col-md-4"> </div>
-                                <div class="col-md-4"> <button type="button" class="btn btn-info" (click) = "send()">לקבלת הצעת מחיר לחץ כאן</button></div>
+                                <div class="col-md-4"> <button type="button" class="btn btn-info" (click)="send()">לקבלת הצעת מחיר לחץ כאן</button></div>
                                 <div class="col-md-4"> </div>
                             </div>
                         </div>

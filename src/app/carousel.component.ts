@@ -5,6 +5,7 @@ import { Component, Input, OnInit } from '@angular/core';
 //Importt the Image interface
 import { Image } from './interfaces/image.interface';
 import { Hall } from './model/hall';
+import { halls } from './globals';
 
 
 //Compoent Decorator
@@ -89,17 +90,30 @@ import { Hall } from './model/hall';
   `],
 })
 //Carousel Component itself
-export class CSSCarouselComponent {
-    public images = IMAGES;
-    @Input() halls: Hall[];
+export class CSSCarouselComponent implements OnInit {
+
+    public images: Image[] = [];
+
+    @Input() h;
+
+    constructor() {
+
+    }
+
+    ngOnInit(): void {
+        debugger;
+        this.images = this.h;
+    }
 
 }
 
 // //IMAGES array implementing Image interface
-var IMAGES: Image[] = [
-	{ "title": "We are covered", "pictureUrl": "https://raw.githubusercontent.com/christiannwamba/angular2-carousel-component/master/images/covered.jpg" },
-	{ "title": "Generation Gap", "pictureUrl": "https://raw.githubusercontent.com/christiannwamba/angular2-carousel-component/master/images/generation.jpg" },
-	{ "title": "Potter Me", "pictureUrl": "https://raw.githubusercontent.com/christiannwamba/angular2-carousel-component/master/images/potter.jpg" },
-	{ "title": "Pre-School Kids", "pictureUrl": "https://raw.githubusercontent.com/christiannwamba/angular2-carousel-component/master/images/preschool.jpg" },
-	{ "title": "Young Peter Cech", "pictureUrl": "https://raw.githubusercontent.com/christiannwamba/angular2-carousel-component/master/images/soccer.jpg" }	
-];
+
+
+// = [
+// 	{ "title": "We are covered", "pictureUrl": "https://raw.githubusercontent.com/christiannwamba/angular2-carousel-component/master/images/covered.jpg" },
+// 	{ "title": "Generation Gap", "pictureUrl": "https://raw.githubusercontent.com/christiannwamba/angular2-carousel-component/master/images/generation.jpg" },
+// 	{ "title": "Potter Me", "pictureUrl": "https://raw.githubusercontent.com/christiannwamba/angular2-carousel-component/master/images/potter.jpg" },
+// 	{ "title": "Pre-School Kids", "pictureUrl": "https://raw.githubusercontent.com/christiannwamba/angular2-carousel-component/master/images/preschool.jpg" },
+// 	{ "title": "Young Peter Cech", "pictureUrl": "https://raw.githubusercontent.com/christiannwamba/angular2-carousel-component/master/images/soccer.jpg" }	
+// ];

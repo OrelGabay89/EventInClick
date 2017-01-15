@@ -9,7 +9,7 @@ export class Hall {
   public hallId: string, 
   public title: string,
   public pictureUrl: string,
-  public images : Array<Image>,
+  public images : Image[],
   public body: string,
   public regionName : string,
   public checked : boolean

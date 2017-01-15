@@ -24,6 +24,8 @@ var _ = require('underscore');
 })
 export class ResultsComponent implements OnInit, OnDestroy {
 
+    bodyClasses: string = "confetyBg";
+    childTitle:string = 'This text is passed to child';
     constructor(
         private hallService: HallService,
         private http: Http
@@ -34,7 +36,7 @@ export class ResultsComponent implements OnInit, OnDestroy {
     regions: Array<string>[];
 
     loadHalls() {
-        //debugger;
+
         // Get halls
         this.hallService.getHalls()
             .subscribe(
@@ -42,17 +44,18 @@ export class ResultsComponent implements OnInit, OnDestroy {
                 // //Bind to view
                 myGlobals.halls = this.halls = data,
                     this.regions = _.toArray(_.uniq(_.pluck(_.flatten(this.halls), "regionName")));
-                debugger;
+               debugger;
             },
 
-            err => console.error(err)
-            )
+            err => console.error(err));
+
         //debugger;
+
+
     }
 
     filterTableResult() {
         $('.btn-filter').on('click', function () {
-            debugger;
             var $target = $(this).data('target');
             if ($target != 'all') {
                 $('.table tr').css('display', 'none');
@@ -64,36 +67,32 @@ export class ResultsComponent implements OnInit, OnDestroy {
     }
 
     ngOnInit(): void {
+        $('body').addClass(this.bodyClasses);
         this.loadHalls();
-
-
-
     }
 
     ngOnDestroy() {
+        $('body').removeClass(this.bodyClasses);
 
     }
 
     onHallCheck(hallId) {
-        debugger;
+
         for (var hall of this.halls) {
 
             if (hall.id == hallId) {
                 hall.checked = (!hall.checked)
             }
-
         }
         myGlobals.halls = this.halls;
-
-
     }
 
     onchange(t: any) {
-        debugger;
+
     }
 
     public send() {
-        debugger;
+
         myGlobals.contactMePriority = $('#cmp').val();
 
         if ($('#DJ').prop("checked"))

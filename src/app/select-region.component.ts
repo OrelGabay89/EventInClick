@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy, ViewEncapsulation, AfterContentInit  } from '@angular/core';
+import { Component, OnInit, OnDestroy, ViewEncapsulation, AfterContentInit } from '@angular/core';
 import myGlobals = require('./globals');
 import { NgbTooltipConfig } from '@ng-bootstrap/ng-bootstrap';
 
@@ -10,11 +10,6 @@ export class areaCode {
     items: items[];
 }
 
-class items {
-    id: number;
-    name: string;
-    checked: boolean;
-}
 
 const AREACODE: areaCode[] = [
     {
@@ -82,21 +77,32 @@ export class SelectRegionComponent implements OnInit, OnDestroy {
     bodyClasses: string = "confetyBg";
     areaCodes = AREACODE;
     selectedAreaCode: areaCode;
-    selectedSubAreaCodeItems: areaCode[] = [];
+    selectedSubAreaCodeItems: items[] = [];
     selectedAreaCodeItems: items[];
     formValid: boolean;
-    valid : boolean = false;
+    valid: boolean = false;
 
     constructor(config: NgbTooltipConfig) {
-      
+
         config.placement = 'right';
         config.triggers = 'click';
     }
 
     ngOnInit(): void {
+        debugger;
         $('body').addClass(this.bodyClasses);
         this.selectedAreaCode = myGlobals.selectedAreaCode;
-      
+
+        if (myGlobals.selectedSubAreaCodeItems != undefined) {
+            this.selectedSubAreaCodeItems = myGlobals.selectedSubAreaCodeItems;
+            if (this.selectedSubAreaCodeItems.length > 0) {
+                this.edited = true;
+                this.formValid = true;
+            }
+            else {
+                this.edited = false;
+            }
+        }
     }
 
     ngOnDestroy() {
@@ -108,24 +114,48 @@ export class SelectRegionComponent implements OnInit, OnDestroy {
         myGlobals.selectedAreaCode = this.selectedAreaCode = areaCode;
         myGlobals.selectedAreaCodeItems = this.selectedAreaCodeItems = this.selectedAreaCode.items;
 
-        this.formValid = true;
+        
 
 
     }
     onSubAreaCheck(areaCodeItem: items): void {
 
-        debugger;
-        
-        if (areaCodeItem.checked)
+        if (areaCodeItem.checked) {
             areaCodeItem.checked = false;
-        else
+            this.selectedSubAreaCodeItems.forEach(element => {
+                if (element.id == areaCodeItem.id) {
+                    var index = this.selectedSubAreaCodeItems.indexOf(areaCodeItem);
+                    this.selectedSubAreaCodeItems.splice(index, 1);
+                }
+            });
+
+        }
+        else {
             areaCodeItem.checked = true;
+            this.selectedSubAreaCodeItems.push(areaCodeItem);
+        }
+        if (this.selectedSubAreaCodeItems.length > 0)
+        {
+            this.edited = true;
+            this.formValid = true;
+        }
+        else 
+        {
+            this.edited = false;
+            this.formValid = false;
+        }
+
+        myGlobals.selectedSubAreaCodeItems = this.selectedSubAreaCodeItems;
 
     }
-      ngAfterContentInit() {
-          debugger;
-  }
-  
+
+    public edited = false;
+
+
+    ngAfterContentInit() {
+        debugger;
+    }
+
 }
 
 

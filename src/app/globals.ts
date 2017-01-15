@@ -14,6 +14,7 @@ export var selectedclebrationType;
 // Area Code
 export var selectedAreaCode;
 export var selectedAreaCodeItems;
+export var selectedSubAreaCodeItems;
 
 //More Details
 

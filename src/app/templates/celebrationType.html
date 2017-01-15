@@ -101,14 +101,12 @@
 </div>
 <form>
     <div class="form-group">
-        <div class="container">
+        <div class="container" style="padding-top:8% ">
             <div class="row text-center">
-                <div class="row top100"></div>
                 <div class="col-md-12">
                     <div class="jumbotron">
                         <h1>? מה אתם חוגגים</h1>
                     </div>
-                    <div class="row top50"></div>
                     <ul class="select-type list-inline">
                         <li *ngFor="let clebrationType of clebrationTypes" [class.selected]="clebrationType === selectedclebrationType" (click)="onSelect(clebrationType)"
                             class="smallCircle">
@@ -117,8 +115,8 @@
                     </ul>
                 </div>
             </div>
-            <div class="row top100"></div>
-            <div class="row top20">
+
+            <div>
                 <label class="col-md-4 control-label" for="singlebutton"></label>
                 <div class="col-md-4 center-block">
                     <button name="singlebutton" class="btn btn-primary center-block continue-btn" type="button" [class.disabled]="!formValid">

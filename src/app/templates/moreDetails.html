@@ -103,7 +103,7 @@
     <div [formGroup]="myForm" novalidate (ngSubmit)="save(myForm.value, myForm.valid)">
         <div class="row">
             <div class="col-md-12 center-block">
-                <div class="row top100"></div>
+                <div class="row top50"></div>
                 <h1 class="text-center gold">בחירת תאריך</h1>
                 <div class="row top20"></div>
                 <div class="form-group row">
@@ -111,6 +111,14 @@
                     <div class="col-md-3">
                         <input class="input-text-right" type="text" placeholder="עד תאריך" class="form-control" id="datetimepickerTo" formControlName="datetimepickerTo"
                             (change)="onchange($event)">
+                        <svg _ngcontent-xoo-23="" xml:space="preserve" xmlns:xlink="http://www.w3.org/1999/xlink" class="icon" style="bottom: 6px;left:10px;width: 50px;height: 25px;position: absolute;enable-background:new 0 0 256 256;"
+                            viewBox="0 0 256 256" x="0px" xmlns="http://www.w3.org/2000/svg" y="0px">
+                            <path _ngcontent-xoo-23="" d="M21,76v158.7c0,5.2,4.2,9.3,9.3,9.3h195.4c5.1,0,9.3-4.2,9.3-9.3V76H21z M76.8,225.3H39.6V188h37.2V225.3z
+                            M76.8,178.7H39.6v-37.3h37.2V178.7z M76.8,132H39.6V94.7h37.2V132z M123.4,225.3H86.1V188h37.2V225.3z M123.4,178.7H86.1v-37.3
+                            h37.2V178.7z M123.4,132H86.1V94.7h37.2V132z M169.9,225.3h-37.2V188h37.2V225.3z M169.9,178.7h-37.2v-37.3h37.2V178.7z M169.9,132
+                            h-37.2V94.7h37.2V132z M216.4,225.3h-37.2V188h37.2V225.3z M216.4,178.7h-37.2v-37.3h37.2V178.7z M216.4,132h-37.2V94.7h37.2V132z
+                            M235,48.3V67H21V48.3c0-5.1,4.2-9.3,9.3-9.3H67V10h20v29h82V10h20v29h36.7C230.8,39,235,43.2,235,48.3z"></path>
+                        </svg>
                         <small [hidden]="myForm.controls.datetimepickerTo.valid || (!submitted)" class="text-danger">
                                 שדה חובה - אנא בחר תאריך
                                     </small>
@@ -118,6 +126,14 @@
                     <div class="col-md-3">
                         <input class="input-text-right" type="text" placeholder="מתאריך" class="form-control" id="datetimepickerFrom" formControlName="datetimepickerFrom"
                             (change)="onchange($event)">
+                        <svg _ngcontent-xoo-23="" xml:space="preserve" xmlns:xlink="http://www.w3.org/1999/xlink" class="icon" style="bottom: 6px;left:10px;width: 50px;height: 25px;position: absolute;enable-background:new 0 0 256 256;"
+                            viewBox="0 0 256 256" x="0px" xmlns="http://www.w3.org/2000/svg" y="0px">
+                            <path _ngcontent-xoo-23="" d="M21,76v158.7c0,5.2,4.2,9.3,9.3,9.3h195.4c5.1,0,9.3-4.2,9.3-9.3V76H21z M76.8,225.3H39.6V188h37.2V225.3z
+                            M76.8,178.7H39.6v-37.3h37.2V178.7z M76.8,132H39.6V94.7h37.2V132z M123.4,225.3H86.1V188h37.2V225.3z M123.4,178.7H86.1v-37.3
+                            h37.2V178.7z M123.4,132H86.1V94.7h37.2V132z M169.9,225.3h-37.2V188h37.2V225.3z M169.9,178.7h-37.2v-37.3h37.2V178.7z M169.9,132
+                            h-37.2V94.7h37.2V132z M216.4,225.3h-37.2V188h37.2V225.3z M216.4,178.7h-37.2v-37.3h37.2V178.7z M216.4,132h-37.2V94.7h37.2V132z
+                            M235,48.3V67H21V48.3c0-5.1,4.2-9.3,9.3-9.3H67V10h20v29h82V10h20v29h36.7C230.8,39,235,43.2,235,48.3z"></path>
+                        </svg>
                         <small [hidden]="myForm.controls.datetimepickerFrom.valid || (!submitted)" class="text-danger">
                                 שדה חובה - אנא בחר תאריך
                                     </small>
@@ -230,7 +246,7 @@
                         </div>
                     </div>
                     <div class="container">
-                        <div class="row top20">
+                        <div class="row">
                             <div class="col-md-4"></div>
                             <div class="col-md-4">
                                 <button name="singlebutton" class="btn btn-primary center-block continue-btn" type="button" [disabled]="!myForm.valid">

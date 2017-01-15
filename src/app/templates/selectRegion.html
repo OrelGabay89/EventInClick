@@ -101,7 +101,7 @@
         </svg>
     </div>
 </div>
- <form #f="ngForm" novalidate>
+<form #f="ngForm" novalidate>
     <div class="form-group">
         <div class="container">
             <div class="row text-center">
@@ -112,7 +112,6 @@
                         <div class="panel-heading">
                             <h3 class="panel-title">בחר תתי איזורים</h3>
                         </div>
-
                         <template let-areaCodeItem ngFor [ngForOf]="selectedAreaCodeItems">
                             <div class="table-container">
                                 <table class="table table-filter">
@@ -120,17 +119,14 @@
                                         <tr>
                                             <td>
                                                 <div class="ckbox">
-                                                    <input type="checkbox" id={{areaCodeItem.id}} 
-                                                    (change)="onSubAreaCheck(areaCodeItem)" 
-                                                    name="checked" 
-                                                    [checked]=areaCodeItem.checked>
+                                                    <input type="checkbox" id={{areaCodeItem.id}} (change)="onSubAreaCheck(areaCodeItem)" name="checked" [checked]=areaCodeItem.checked>
                                                     <label for="{{areaCodeItem.id}}"></label>
                                                 </div>
                                             </td>
                                             <td>
                                                 <div class="media">
                                                     <div class="media-body">
-                                                        <p class="summary">{{areaCodeItem.name}}</p>
+                                                        <p class="summary gold">{{areaCodeItem.name}}</p>
                                                     </div>
                                                 </div>
                                             </td>
@@ -140,12 +136,10 @@
                             </div>
                         </template>
                     </template>
-           
-
                     <div class="jumbotron">
                         <h1>איזור האירוע</h1>
                     </div>
-                    <div class="row top10"></div>
+                    <div class="row"></div>
                     <ul class="select-type list-inline">
                         <li *ngFor="let areaCode of areaCodes" #t="ngbTooltip" [class.selected]="areaCode === selectedAreaCode" (click)="onSelect(areaCode)"
                             class="smallCircle" [ngbTooltip]="tipContent">
@@ -154,9 +148,7 @@
                     </ul>
                 </div>
             </div>
-            <div class="row top100"></div>
-          
-            <div class="row top20">
+            <div class="row">
                 <label class="col-md-4 control-label" for="singlebutton"></label>
                 <div class="col-md-4 center-block">
                     <button name="singlebutton" class="btn btn-primary center-block continue-btn" type="button" placement="bottom" [class.disabled]="!formValid">
@@ -166,6 +158,14 @@
                                 <i class="glyphicon glyphicon-menu-down"></i>
                             </a>
                         </button>
+                </div>
+                <div *ngIf="edited" class="footer navbar-fixed-bottom text-center bottom-style">
+                    <h3 style="margin: 0">תתי איזורים שנבחרו</h3>
+                    <ul class="select-type list-inline">
+                        <li *ngFor="let areaCode of selectedSubAreaCodeItems" class="pbc">
+                            {{areaCode.name}}
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>

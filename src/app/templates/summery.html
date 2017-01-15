@@ -105,27 +105,23 @@
         </div>
     </div>
 </div>
-<div [formGroup]="myForm" novalidate (ngSubmit)="save(myForm.value, myForm.valid)">
+<div [formGroup]="myForm">
     <div class="container">
         <div class="row top100"></div>
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <fieldset class="summery">
                     <!--#################################################################################################################### -->
-                    <div class="row top50"></div>
+                    <div class="row top20"></div>
                     <div class="form-inline">
                         <div class="col-md-6">
                         </div>
                         <div class="col-md-6">
-                        
                             <div class="col-md-12">
                                 <label class="control-label lbp">   שלום , <strong>{{fullName}}</strong> . להלן סיכום פרטי האירוע</label>
-                          
                             </div>
                         </div>
                     </div>
-
-
                     <div class="row top50"></div>
                     <!--#################################################################################################################### -->
                     <div class="form-inline">
@@ -133,18 +129,31 @@
                         </div>
                         <div class="col-md-10">
                             <div class="col-md-4">
-                                <label class="control-label bold" for="emailinput">{{clebrationType}}</label> : <label class="control-label lbp"
-                                    for="emailinput">סוג האירוע</label></div>
+                                <label class="control-label bold">{{clebrationType}}</label> :
+                                <label class="control-label lbp">סוג האירוע</label></div>
                             <div class="col-md-4">
-                                <label class="control-label bold" for="emailinput">{{phone}}</label> : <label class="control-label lbp"
-                                    for="emailinput">טלפון</label></div>
+                                <label class="control-label bold">{{phone}}</label> :
+                                <label class="control-label lbp">טלפון</label></div>
                             <div class="col-md-4">
-                                <label class="control-label bold" for="emailinput">{{fullName}}</label> : <label class="control-label lbp"
-                                    for="emailinput">שם</label></div>
+                                <label class="control-label bold">{{fullName}}</label> :
+                                <label class="control-label lbp">שם</label></div>
                         </div>
                     </div>
                     <!--#################################################################################################################### -->
-                    <div class="row top50"></div>
+                    <div class="row top40"></div>
+                    <div class="form-inline">
+                        <div class="col-md-2"></div>
+                        <div class="col-md-8">
+                            <ul class="select-type list-inline text-center">
+                                <li *ngFor="let areaCode of selectedSubAreaCodeItems" class="pbc">
+                                    {{areaCode.name}}
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-md-2"> <label class="control-label lbp"> : תתי איזורים</label> </div>
+                    </div>
+                    <!--#################################################################################################################### -->
+                    <div class="row top40"></div>
                     <div class="form-inline">
                         <div class="col-md-2"> </div>
                         <div class="col-md-4">
@@ -162,7 +171,6 @@
                     <div class="form-inline">
                         <div class="col-md-2"> </div>
                         <div class="col-md-4">
-                           
                             <select class="form-control bcp" name="priceTo" id="priceTo" (change)="onchange($event)">
                                     <option value="100">₪ 100 </option>
                                     <option value="150">₪ 150 </option>
@@ -170,10 +178,9 @@
                                     <option value="250">₪ 250</option>
                                     <option value="300 + ">₪ 300  </option>
                                  </select>
-                             <label class="control-label lbp"> עד </label>
+                            <label class="control-label lbp"> עד </label>
                         </div>
                         <div class="col-md-4">
-                         
                             <select class="form-control bcp" name="priceFrom" id="priceFrom" (change)="onchange($event)">
                                     <option value="100">₪ 100</option>
                                     <option value="150">₪ 150</option>
@@ -181,7 +188,7 @@
                                     <option value="250">₪ 250</option>
                                     <option value="300 + ">₪ 300 + </option>
                                  </select>
-                               <label class="control-label lbp"> מ </label>
+                            <label class="control-label lbp"> מ </label>
                         </div>
                         <div class="col-md-2"> <label class="control-label lbp">: מחיר למנה</label> </div>
                     </div>
@@ -242,14 +249,12 @@
                                     <option value="afternoon">צהריים</option>
                                      <option value="evening">ערב</option>
                                  </select>
-                           
                         </div>
-                             <div class="col-md-2"> <label class="control-label lbp">: עדיפות לזמן ביום</label></div>
+                        <div class="col-md-2"> <label class="control-label lbp">: עדיפות לזמן ביום</label></div>
                     </div>
-                    <div class="row top100"></div>
                     <div class="form-group">
                         <div class="col-md-4"></div>
-                        <div class="col-md-4">
+                        <div class="col-md-4" style="margin-bottom: 5px;">
                             <button name="singlebutton" class="btn btn-primary center-block continue-btn" type="submit">
                                     <a [routerLink]="['/results']"> חפש <i class="glyphicon glyphicon-menu-down"></i></a>
                                     </button>
@@ -258,117 +263,6 @@
                     </div>
                     <div class="row top50"></div>
                 </fieldset>
-                <!--                
-                <fieldset class="summery">
-                    <div class="form-group">
-                        <div class="col-md-6">
-                        </div>
-                        <div class="col-md-6">
-                            <div class="col-md-4">
-                                <label class="control-label" for="emailinput">{{clebrationType}}</label> : <label class="control-label"
-                                    for="emailinput">סוג האירוע</label></div>
-                            <div class="col-md-4">
-                                <label class="control-label" for="emailinput">{{phone}}</label> : <label class="control-label"
-                                    for="emailinput">טלפון</label></div>
-                            <div class="col-md-4">
-                                <label class="form-control" class="control-label" id="fullName">{{fullName}}</label> :
-                                <label class="control-label" for="fullName">שם</label></div>
-                            <!--id="fullName" formControlName="fullName"-->
-                <!--</div>
-                    </div>
-                    <div class="form-group">
-                        <div class="form-inline">
-                            <div class="col-md-2"> </div>
-                            <div class="col-md-4">
-                                <input type="text" class="form-control">
-                                <label class="control-label"> עד </label>
-                            </div>
-                            <div class="col-md-4">
-                                <input type="text" class="form-control">
-                                <label class="control-label"> מ </label>
-                            </div>
-                            <div class="col-md-2"> <label class="control-label">: תאריך</label> </div>
-                        </div>
-                    </div>
-
-                                 <div class="form-group">
-                        <div class="form-inline">
-                            <div class="col-md-2"> </div>
-                            <div class="col-md-4">
-                                <input type="text" class="form-control">
-                                <label class="control-label"> עד </label>
-                            </div>
-                            <div class="col-md-4">
-                                <input type="text" class="form-control">
-                                <label class="control-label"> מ </label>
-                            </div>
-                            <div class="col-md-2"> <label class="control-label">: תאריך</label> </div>
-                        </div>
-                    </div>-->
-                <!--<div class="col-md-3">
-                            <input id="name" name="name" type="text" placeholder="Your name" class="form-control">
-                        </div>
-                      
-                        <div class="col-md-3">
-                            <input id="name" name="name" type="text" placeholder="Your name" class="form-control">
-                        </div>-->
-                <!--<div class="form-group">
-                        <div class="col-md-2"></div>
-                        <div class="col-md-2">cc</div>
-                        <div class="col-md-2"></div>
-                        <div class="col-md-3"> <label for="request-description">עד</label><input type="text" placeholder="עד תאריך" class="form-control"
-                                id="datetimepickerTo" formControlName="datetimepickerTo"></div>
-                        <div class="col-md-1"></div>
-                          </div>-->
-                <!--<div class="col-md-2"></div>
-                <div class="col-md-2">
-                    <input type="text" placeholder="עד תאריך" class="form-control" id="datetimepickerTo" formControlName="datetimepickerTo">
-                </div>
-                <label class="col-md-2" for="request-description">עד</label>
-                 <div class="col-md-4"></div>
-                <div class="col-md-2">
-                    <input id="request-description" class="form-control" name="datetimepickerFrom" formControlName="datetimepickerFrom" type="text"
-                        placeholder="" required="">
-                </div>
-                <div class="col-md-2">
-                    מ : <label class="control-label" for="datetimepickerFrom">תאריך</label>
-                </div>-->
-                <!--<div class="form-group">
-                <div class="col-md-2">
-                    <label for="dayTime" class="fr">עדיפות לזמן ביום</label>
-                    <select class="form-control text-right" name="dayTime" placeholder="בחר" id="dayTime" (change)="onchange($event)">
-                                    <option value="morning">בוקר</option>
-                                    <option value="afternoon">צהריים</option>
-                                     <option value="evening">ערב</option>
-                                 </select>
-                </div>
-            </div>
-            <div class="form-group">
-                <div class="col-md-2">
-                    <label for="dayOfTheWeek" class="fr">עדיפות ליום בשבוע</label>
-                    <select class="form-control text-right" name="dayOfTheWeek" placeholder="בחר" id="dayOfTheWeek" (change)="onchange($event)">>
-                                    <option value="sunday">ראשון</option>
-                                    <option value="monday">שני</option>
-                                    <option value="tuesday">שלישי</option>
-                                    <option value="wednesday">רביעי</option>
-                                    <option value="thursday">חמישי</option>
-                                    <option value="friday">שישי</option>
-                                    <option value="saturday">שבת</option>
-
-                                 </select>
-                </div>
-            </div>-->
-                <!-- Button -->
-                <!--<div class="form-group">
-                <label class="col-md-4 control-label" for="singlebutton"></label>
-                <div class="col-md-4 center-block">
-                    <button name="singlebutton" class="btn btn-primary center-block continue-btn" type="submit">
-                                    <a [routerLink]="['/results']"> חפש <i class="glyphicon glyphicon-menu-down"></i></a>
-                                    </button>
-                </div>
-            </div>-->
-                <!--</fieldset>
-            </div>-->
             </div>
         </div>
     </div>

@@ -26,9 +26,9 @@ export class HallService {
 
         let headers = new Headers({ 'Content-Type': 'application/json; charset=utf-8' });
         let options = new RequestOptions({ method: RequestMethod.Post, headers: headers });
-        debugger;
+        //debugger;
         let body = serialize(myGlobals);
-        debugger;
+        //debugger;
 
         return this.http.post(`${AppSettings.API_ENDPOINT}`, body, options)
             .map(response => response.json())
@@ -38,18 +38,9 @@ export class HallService {
     }
 
     private parseData(data): Hall {
-        //debugger;
+        debugger;
         return new Hall(data.id, data.HallId, data.title, data.pictureUrl, data.images, data.body, data.regionName, true);
     }
-
-    // private serializeObj(obj) {
-    //     var result = [];
-    //     for (var property in obj)
-    //         result.push(encodeURIComponent(property) + "=" + encodeURIComponent(obj[property]));
-
-    //     return result.join("&");
-    // }
-
 
     sendEmail() {
 
@@ -66,5 +57,13 @@ export class HallService {
             });
 
     }
+
+        // private serializeObj(obj) {
+    //     var result = [];
+    //     for (var property in obj)
+    //         result.push(encodeURIComponent(property) + "=" + encodeURIComponent(obj[property]));
+
+    //     return result.join("&");
+    // }
 
 }

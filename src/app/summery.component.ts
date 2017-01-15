@@ -19,6 +19,7 @@ export class SummeryComponent implements OnInit {
     public submitted: boolean;
     public events: any[] = [];
 
+    selectedSubAreaCodeItems: items[] = [];
     fullName: string;
     clebrationType: string;
     phone: string;
@@ -49,7 +50,7 @@ export class SummeryComponent implements OnInit {
         this.clebrationType = myGlobals.selectedclebrationType.name;
         this.phone = myGlobals.phoneAreaCode + "-" + myGlobals.phoneNumber
 
-        debugger;
+        this.selectedSubAreaCodeItems = myGlobals.selectedSubAreaCodeItems;
 
         $('select[name=priceFrom]').val(myGlobals.priceFrom);
         $('select[name=priceTo]').val(myGlobals.priceTo);
