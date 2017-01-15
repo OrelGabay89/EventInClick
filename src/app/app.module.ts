@@ -19,7 +19,7 @@ import {CSSCarouselComponent} from './carousel.component';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { NgbdTooltipTplcontent } from './tooltip-tplcontent.component';
 import { KeysPipe } from './pipe';
-
+import { Ng2Bs3ModalModule } from 'ng2-bs3-modal/ng2-bs3-modal';
 
 
 @NgModule({
@@ -30,6 +30,7 @@ import { KeysPipe } from './pipe';
     HttpModule,
     JsonpModule,
     routes,
+    Ng2Bs3ModalModule
     
   ],
   declarations: [

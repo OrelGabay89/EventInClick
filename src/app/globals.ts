@@ -2,8 +2,6 @@ import { Hall } from './model/hall';
 //
 // ===== File globals.ts    
 //
-var $ = require("jquery");
-
 var moment = require('moment');
 
 'use strict';

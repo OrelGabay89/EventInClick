@@ -10,7 +10,7 @@ import { SummeryComponent }    from './summery.component';
 import { ResultsComponent }    from './results.component';
 
 const router: Routes = [
-  { path: '', component: ResultsComponent},
+  { path: '', component: WelcomePageComponent},
   { path: 'celebration-type', component: CelebrationTypeComponent },
   { path: 'select-region', component: SelectRegionComponent },
   { path: 'more-details', component: MoreDetailsComponent },

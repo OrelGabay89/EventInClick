@@ -29,6 +29,7 @@
     "json-typescript-mapper": "^1.0.5",
     "less": "^2.7.1",
     "moment": "^2.17.1",
+    "ng2-bs3-modal": "^0.10.4",
     "rxjs": "5.0.0-beta.12",
     "sendgrid": "^4.7.1",
     "zone.js": "^0.6.25"

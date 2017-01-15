@@ -108,41 +108,13 @@
                 <div class="row top100"></div>
                 <div class="col-md-2"></div>
                 <div class="col-md-8">
-                    <template #tipContent>
-                        <div class="panel-heading">
-                            <h3 class="panel-title">בחר תתי איזורים</h3>
-                        </div>
-                        <template let-areaCodeItem ngFor [ngForOf]="selectedAreaCodeItems">
-                            <div class="table-container">
-                                <table class="table table-filter">
-                                    <tbody>
-                                        <tr>
-                                            <td>
-                                                <div class="ckbox">
-                                                    <input type="checkbox" id={{areaCodeItem.id}} (change)="onSubAreaCheck(areaCodeItem)" name="checked" [checked]=areaCodeItem.checked>
-                                                    <label for="{{areaCodeItem.id}}"></label>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div class="media">
-                                                    <div class="media-body">
-                                                        <p class="summary gold">{{areaCodeItem.name}}</p>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </template>
-                    </template>
                     <div class="jumbotron">
                         <h1>איזור האירוע</h1>
                     </div>
                     <div class="row"></div>
                     <ul class="select-type list-inline">
-                        <li *ngFor="let areaCode of areaCodes" #t="ngbTooltip" [class.selected]="areaCode === selectedAreaCode" (click)="onSelect(areaCode)"
-                            class="smallCircle" [ngbTooltip]="tipContent">
+                        <li *ngFor="let areaCode of areaCodes" [class.selected]="areaCode === selectedAreaCode" (click)="onSelect(areaCode)" class="smallCircle"
+                            (click)="modal.open()">
                             {{areaCode.name}}
                         </li>
                     </ul>
@@ -170,5 +142,36 @@
             </div>
         </div>
     </div>
+    <modal #modal>
+        <modal-header [show-close]="true">
+            <h3 class="panel-title text-center">בחר תתי איזורים</h3>
+        </modal-header>
+        <modal-body>
+            <template let-areaCodeItem ngFor [ngForOf]="selectedAreaCodeItems">
+                <div class="table-container">
+                    <table class="table table-filter">
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div class="ckbox">
+                                        <input type="checkbox" id={{areaCodeItem.id}} (change)="onSubAreaCheck(areaCodeItem)" name="checked" [checked]=areaCodeItem.checked>
+                                        <label for="{{areaCodeItem.id}}"></label>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="media">
+                                        <div class="media-body">
+                                            <p class="summary gold">{{areaCodeItem.name}}</p>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </template>
+        </modal-body>
+        <modal-footer [show-default-buttons]="false"></modal-footer>
+    </modal>
 </form>
 <router-outlet></router-outlet>
